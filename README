@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------
+Cumulus Weather Theme by magicbug
+www.magicbug.co.uk
+-------------------------------------------------------------------------------
+
+Please consider a supporting Cumulus by donating at http://sandaysoft.com/products/cumulus
+
+--------------
+  Installing
+--------------
+
+On XP systems:
+	
+	Rename
+	C:\Program Files\Cumulus\web
+	to
+	C:\Program Files\Cumulus\OldWeb
+	
+	Copy the web folder in this download to
+	C:\Program Files\Cumulus\web
+	
+	Start/Restart Cumulus
+	
+On Vista systems:
+
+	Rename
+	C:\Users\[username]\AppData\Local\VirtualStore\Program Files\Cumulus\web
+	to
+	C:\Users\[username]\AppData\Local\VirtualStore\Program Files\Cumulus\OldWeb
+	
+	Copy the web folder in this download to
+	C:\Users\[username]\AppData\Local\VirtualStore\Program Files\Cumulus\web
+	
+	Start/Restart Cumulus
