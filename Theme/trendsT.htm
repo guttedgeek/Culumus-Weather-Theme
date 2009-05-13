@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<meta name="description" content="<#location> weather data"/>
+	<meta name="keywords" content="Cumulus, <#location> weather data, weather, data, weather station"/>
+	<title><#location> weather</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<script type="text/javascript">
+		function changeImage(im) {
+			document.images["graphs"].src = im + "?" + new Date().getTime();
+		}
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<h1><img src="images/logo.gif" width="318" height="35" alt="<#location> weather" /></h1>
+		
+		<div id="overview">
+			<p>The weather station in use is the <#stationtype>, and these pages are updated every <#interval> minutes. The meteorological day used at this station ends at <#rollovertime>.</p>
+			<p><b>Forecast:</b> <#forecast></p>
+		</div>
+		<div id="navcontainer">
+			<ul id="navlist">
+				<li><a href="index.htm">now</a></li>
+				<li><a href="gauges.htm">gauges</a></li>
+				<li><a href="today.htm">today</a></li>
+				<li><a href="yesterday.htm">yesterday</a></li>
+				<li><a href="record.htm">records</a></li>
+				<li><a href="trends.htm">trends</a></li>
+			</ul>
+		</div>
+
+		
+		<div id="metdata">
+			<img src="images/metdata.gif" width="822" height="47" alt="Meteorological Data" /><br />
+			<div class="test">
+				<h3>Trends</h3>
+				<p>These graphs present the temperature, pressure, rainfall, and wind speed trends for the last <#graphperiod> hours. </p>
+				<p>The thumbnail graphs are sampled every ten minutes. Click on a thumbnail to display the corresponding larger graph in the panel above it. The large graphs are sampled every minute. </p>
+				
+				<p> <img src="images/wind.png" name="graphs" id="graphs" title="Weather Graphs" /></p>
+<table cellpadding="0" cellspacing="0" id="Graph_menu">
+  <tr>
+	<td colspan="5"><p>Click on a thumbnail to show a large graph in the panel above.</p></td>
+  </tr>
+  <tr>
+	<td class="td_thumbnails"><a onclick=changeImage("images/wind.png")><img src="images/windsm.png" alt="Wind Graph Thumbnail" width="150" height="100" border="0" /></a></td>
+	<td class="td_thumbnails"><a onclick=changeImage("images/temp.png")><img src="images/tempsm.png" alt="Temperature Graph Thumbnail" width="150" height="100" border="0" /></a></td>
+	<td class="td_thumbnails"><a onclick=changeImage("images/intemp.png")><img src="images/intempsm.png" alt="Inside Temperature Graph Thumbnail" width="150" height="100" border="0" /></a></td>
+	<td class="td_thumbnails"><a onclick=changeImage("images/press.png")><img src="images/presssm.png" alt="Pressure Graph Thumbnail" width="150" height="100" border="0" /></a></td>
+	<td class="td_thumbnails"><a onclick=changeImage("images/rain.png")><img src="images/rainsm.png" alt="Rain Graph Thumbnail" width="150" height="100" border="0" /></a></td>
+  </tr>
+  <tr>
+	<td class="td_thumbnails"><a onclick=changeImage("images/windd.png")><img src="images/winddsm.png" alt="Wind Direction Thumbnail" width="150" height="100" border="0" /></a></td>
+	<td class="td_thumbnails"><a onclick=changeImage("images/tempm.png")><img src="images/tempmsm.png" alt="Temp Min/Max Graph Thumbnail" width="150" height="100" border="0" /></a></td>
+	<td class="td_thumbnails"><a onclick=changeImage("images/hum.png")><img src="images/humsm.png" alt="Humidity Graph Thumbnail" width="150" height="100" border="0" /></a></td>
+	<td class="td_thumbnails"><a onclick=changeImage("images/raint.png")><img src="images/raintsm.png" alt="Today's Rainfall Graph Thumbnail" width="150" height="100" border="0" /></a></td>
+	<td class="td_thumbnails"><a onclick=changeImage("images/raind.png")><img src="images/raindsm.png" alt="Daily Rain Graph Thumbnail" width="150" height="100" border="0" /></a></td>
+  </tr>
+  </table>
+				
+			</div>
+		</div>
+		
+		<div id="footer">
+			Theme by <a href="http://www.magicbug.co.uk" target="_blank">magicbug.co.uk</a>, powered by <a href="http://sandaysoft.com/products/cumulus" target="_blank">Cumulus</a>
+		</div>
+	</div>
+</body>
+</html>

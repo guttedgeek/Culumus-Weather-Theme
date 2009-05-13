@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<meta name="description" content="<#location> weather data"/>
+	<meta name="keywords" content="Cumulus, <#location> weather data, weather, data, weather station"/>
+	<title><#location> weather</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+</head>
+<body>
+	<div id="wrapper">
+		<h1><img src="images/logo.gif" width="318" height="35" alt="<#location> weather" /></h1>
+		
+		<div id="overview">
+			<p>The weather station in use is the <#stationtype>, and these pages are updated every <#interval> minutes. The meteorological day used at this station ends at <#rollovertime>.</p>
+			<p><b>Forecast:</b> <#forecast></p>
+		</div>
+		<div id="navcontainer">
+			<ul id="navlist">
+				<li><a href="index.htm">now</a></li>
+				<li><a href="gauges.htm">gauges</a></li>
+				<li><a href="today.htm">today</a></li>
+				<li><a href="yesterday.htm">yesterday</a></li>
+				<li><a href="record.htm">records</a></li>
+				<li><a href="trends.htm">trends</a></li>
+			</ul>
+		</div>
+
+		
+		<div id="metdata">
+			<img src="images/metdata.gif" width="822" height="47" alt="Meteorological Data" /><br />
+			<div class="test">
+				<h3>Records Since</h3>
+				<p>Records began on <#recordsbegandate>. Here are the extremes recorded since then.</p>
+				<table width="100%">
+					<tr>
+						<td class="over_title" colspan="3">Temperature and Humidity</td>
+					</tr>
+
+					<tr>
+						<td class="field_title">Highest&nbsp;Temperature</td>
+						<td><#tempH> <#tempunit></td>
+						<td><#TtempH></td>
+					</tr>
+					<tr>
+						<td class="field_title">Lowest&nbsp;Temperature </td>
+						<td><#tempL>&nbsp;<#tempunit></td>
+						<td><#TtempL></td>
+					</tr>
+					<tr>
+						<td class="field_title">Lowest&nbsp;Wind&nbsp;Chill&nbsp;Temperature</td>
+						<td><#wchillH>&nbsp;<#tempunit></td>
+						<td><#TwchillH></td>
+					</tr>
+					<tr>
+						<td class="field_title">Highest Minimum </td>
+						<td><#mintempH>&nbsp;<#tempunit></td>
+						<td><#TmintempH></td>
+					</tr>
+					<tr>
+						<td class="field_title">Lowest Maximum </td>
+						<td><#maxtempL>&nbsp;<#tempunit></td>
+						<td><#TmaxtempL></td>
+					</tr>
+
+					<tr>
+						<td class="over_title" colspan="3">Rain</td>
+					</tr>
+
+					<tr>
+						<td class="field_title">Highest&nbsp;Rain&nbsp;Rate</td>
+						<td><#rrateM>&nbsp;<#rainunit>/hr</td>
+						<td><#TrrateM></td>
+					</tr>
+	
+					<tr>
+						<td class="field_title">Highest&nbsp;Hourly&nbsp;Rainfall</td>
+						<td><#rfallhH>&nbsp;<#rainunit></td>
+						<td><#TrfallhH></td>
+					</tr>
+	
+					<tr>
+						<td class="field_title">Highest&nbsp;Daily&nbsp;Rainfall</td>
+						<td><#rfallH>&nbsp;<#rainunit></td>
+						<td><#TrfallH></td>
+					</tr>
+	
+					<tr>
+						<td class="field_title">Highest&nbsp;Monthly&nbsp;Rainfall</td>
+						<td><#rfallmH>&nbsp;<#rainunit></td>
+						<td><#TrfallmH></td>
+					</tr>
+					
+					<tr>
+						<td class="over_title" colspan="3">Wind</td>
+					</tr>
+
+					<tr>
+						<td class="field_title">Highest&nbsp;Wind&nbsp;Gust</td>
+						<td><#gustM>&nbsp;<#windunit></td>
+						<td><#TgustM></td>
+					</tr>
+	
+					<tr>
+						<td class="field_title">Highest&nbsp;Wind&nbsp;Speed&nbsp;Average</td>
+						<td><#wspeedH>&nbsp;<#windunit></td>
+						<td><#TwspeedH></td>
+					</tr>
+
+					<tr>
+						<td class="over_title" colspan="3">Pressure</td>
+					</tr>
+
+					<tr>
+						<td class="field_title">Lowest&nbsp;Pressure&nbsp;(sl) </td>
+						<td><#pressL>&nbsp;<#pressunit></td>
+						<td><#TpressL></td>
+					</tr>
+					<tr>
+						<td class="field_title">Highest&nbsp;Pressure&nbsp;(sl)</td>
+						<td><#pressH>&nbsp;<#pressunit></td>
+						<td><#TpressH></td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+		
+		<div id="footer">
+			Theme by <a href="http://www.magicbug.co.uk" target="_blank">magicbug.co.uk</a>, powered by <a href="http://sandaysoft.com/products/cumulus" target="_blank">Cumulus</a>
+		</div>
+	</div>
+</body>
+</html>

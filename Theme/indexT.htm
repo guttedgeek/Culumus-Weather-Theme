@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<meta name="description" content="<#location> weather data"/>
+	<meta name="keywords" content="Cumulus, <#location> weather data, weather, data, weather station"/>
+	<title><#location> weather</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+</head>
+<body>
+	<div id="wrapper">
+		<h1><img src="images/logo.gif" width="318" height="35" alt="<#location> weather" /></h1>
+		
+		<div id="overview">
+			<p>The weather station in use is the <#stationtype>, and these pages are updated every <#interval> minutes. The meteorological day used at this station ends at <#rollovertime>.</p>
+			<p><b>Forecast:</b> <#forecast></p>
+		</div>
+		<div id="navcontainer">
+			<ul id="navlist">
+				<li><a href="index.htm">now</a></li>
+				<li><a href="gauges.htm">gauges</a></li>
+				<li><a href="today.htm">today</a></li>
+				<li><a href="yesterday.htm">yesterday</a></li>
+				<li><a href="record.htm">records</a></li>
+				<li><a href="trends.htm">trends</a></li>
+			</ul>
+		</div>
+
+		
+		<div id="metdata">
+			<img src="images/metdata.gif" width="822" height="47" alt="Meteorological Data" /><br />
+			<div class="test">
+				<h3>Weather Now</h3>
+				
+				<table width="100%">
+					<tr>
+						<td class="over_title" colspan="4">Temperature and Humidity</td>
+					</tr>
+					<tr>
+						<td class="field_title">Temperature</td>
+						<td><#temp> <#tempunit></td>
+						<td class="field_title">Dew Point</td>
+						<td><#dew> <#tempunit></td>
+					</tr>
+					
+					<tr>
+						<td class="field_title">Windchill</td>
+						<td><#wchill> <#tempunit></td>
+						<td class="field_title">Humidity</td>
+						<td><#hum>%</td>
+					</tr>
+					
+					<tr>
+						<td class="field_title">Heat Index</td>
+						<td><#heatindex> <#tempunit></td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td class="over_title" colspan="4">Rainfall</td>
+					</tr>
+					
+					<tr>
+						<td class="field_title">Rainfall Today</td>
+						<td><#rfall> <#rainunit></td>
+						<td class="field_title">Rainfall Rate</td>
+						<td><#rrate> <#rainunit>/hr</td>
+					</tr>
+					
+					<tr>
+						<td class="field_title">Rainfall This Month</td>
+						<td><#rmonth> <#rainunit></td>
+						<td class="field_title">Rainfall This Year</td>
+						<td><#ryear> <#rainunit></td>
+					</tr>
+					
+					<tr>
+						<td class="field_title">Rainfall Last Hour</td>
+						<td><#rhour> <#rainunit></td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td class="over_title" colspan="4">Wind</td>
+					</tr>
+					
+					<tr>
+						<td class="field_title">Wind Speed (gust)</td>
+						<td><#wgust> <#windunit></td>
+						<td>Wind Speed (avg)</td>
+						<td><#wspeed> <#windunit></td>
+					</tr>
+					
+					<tr>
+						<td class="field_title">Wind Bearing</td>
+						<td><#avgbearing>&deg; <#wdir></td>
+						<td class="field_title">Beaufort <#beaufort></td>
+						<td><#beaudesc></td>
+					</tr>
+					
+					<tr>
+						<td class="over_title" colspan="4">Pressure</td>
+					</tr>
+					
+					<tr>
+						<td class="field_title">Barometer</td>
+						<td><#press> <#pressunit></td>
+						<td class="field_title">Falling slowly</td>
+						<td><#presstrendval> <#pressunit>/hr</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<div id="footer">
+			Theme by <a href="http://www.magicbug.co.uk" target="_blank">magicbug.co.uk</a>, powered by <a href="http://sandaysoft.com/products/cumulus" target="_blank">Cumulus</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<meta name="description" content="<#location> weather data"/>
+	<meta name="keywords" content="Cumulus, <#location> weather data, weather, data, weather station"/>
+	<title><#location> weather</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<script language="JavaScript" src="wz_jsgraphics.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<h1><img src="images/logo.gif" width="318" height="35" alt="<#location> weather" /></h1>
+		
+		<div id="overview">
+			<p>The weather station in use is the <#stationtype>, and these pages are updated every <#interval> minutes. The meteorological day used at this station ends at <#rollovertime>.</p>
+			<p><b>Forecast:</b> <#forecast></p>
+		</div>
+		<div id="navcontainer">
+			<ul id="navlist">
+				<li><a href="index.htm">now</a></li>
+				<li><a href="gauges.htm">gauges</a></li>
+				<li><a href="today.htm">today</a></li>
+				<li><a href="yesterday.htm">yesterday</a></li>
+				<li><a href="record.htm">records</a></li>
+				<li><a href="trends.htm">trends</a></li>
+			</ul>
+		</div>
+
+		
+		<div id="metdata">
+			<img src="images/metdata.gif" width="822" height="47" alt="Meteorological Data" /><br />
+			<div class="test">
+				<h3>Instrument view of current data at <#time></h3>
+<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="33%" align="center" bgcolor="#EFEFEF" ><div align="center" >Outside Temperature</div></td>
+		<td width="34%" align="center" bgcolor="#FFFFFF" ><div align="center" >Wind Chill</div></td>
+		<td width="33%" align="center" bgcolor="#EFEFEF" ><div align="center" >Heat Index</div>		</td>
+	</tr>
+	<tr>
+		<td width="33%" align="center" bgcolor="#EFEFEF" ><div id="outsidetemp">small</div></td>
+		<td width="34%" align="center" bgcolor="#FFFFFF" ><div id="windchill">small</div></td>
+		<td width="33%" align="center" bgcolor="#EFEFEF" ><div id="heatindex">small</div></td>
+	</tr>
+	<tr>
+		<td width="33%" align="center" bgcolor="#FFFFFF" ><div align="center" class="normaltext">Dew Point</div></td>
+		<td width="34%" align="center" bgcolor="#EFEFEF" ><div align="center" class="normaltext">Outside Humidity</div></td>
+		<td width="33%" align="center" bgcolor="#FFFFFF" ><div align="center" class="normaltext">Rain today</div></td>
+	</tr>
+	<tr>
+		<td width="33%" align="center" bgcolor="#FFFFFF" ><div id="dewpoint">small</div></td>
+		<td width="34%" align="center" bgcolor="#EFEFEF" ><div id="outsidehumidity">small</div></td>
+		<td width="33%" align="center" bgcolor="#FFFFFF" ><div id="rain">small</div></td>
+	</tr>
+	<tr>
+		<td width="33%" align="center" bgcolor="#EFEFEF" ><div align="center" class="normaltext">Inside Temperature</div></td>
+		<td width="34%" align="center" bgcolor="#FFFFFF" ><div align="center" class="normaltext">Inside Humidity</div></td>
+		<td width="33%" align="center" bgcolor="#EFEFEF" ><div align="center" class="normaltext">Cloud Base</div></td>
+	</tr>
+	<tr>
+		<td width="33%" align="center" bgcolor="#EFEFEF"><div id="insidetemp">small</div></td>
+		<td width="34%" align="center" bgcolor="#FFFFFF"><div id="insidehumidity">small</div></td>
+		<td width="33%" align="center" bgcolor="#EFEFEF" > <div id="cloudbase"></div></td>
+	</tr>
+ </table>
+ <table width="100%"  border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="50%" align="center" ><div align="center" class="normaltext">&nbsp;Barometer</div></td>
+		<td width="50%" align="center" ><div align="center" class="normaltext">&nbsp;Wind</div></td>
+	</tr>
+	<tr>
+		<td align="center" ><div id="barometer">analog</div></td>
+		<td align="center" ><div id="wind">wind</div></td>
+	</tr>
+ </table>
+ <table width="100%"  border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="33%" align="center"><img src="images/compass.png"  alt="Wind Compass" name="Compass"></td>
+		<td width="34%" align="center"><img src="images/windgauge.png" name="WindGauge"  alt="Wind Gauge" ></td>
+		<td width="33%" align="center"><img src="images/windrose.png" name="WindRose"  alt="Wind Rose" ></td>
+	</tr>
+   </table>
+ <p></p>
+ <!-- This is the real time wind display. If you don't want to use it, delete everything between this comment and the next one. -->
+	<div align="center">	
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+			id="CumulusRealtime" width="600" height="300"
+			codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+			<param name="movie" value="CumulusRealtime.swf" />
+			<param name="quality" value="high" />
+			<param name="wmode" value="transparent" />
+			<param name='flashVars' value='interval=<#realtimeinterval>'/>
+			<param name="allowScriptAccess" value="sameDomain" />
+			<embed src="CumulusRealtime.swf" quality="high" wmode="transparent"
+				width="600" height="300" name="CumulusRealtime" align="middle"
+				play="true"
+				loop="false"
+				quality="high"
+				allowScriptAccess="sameDomain"
+				flashVars='interval=<#realtimeinterval>'
+				type="application/x-shockwave-flash"
+				pluginspage="http://www.adobe.com/go/getflashplayer">
+			</embed>
+	</object>
+	</div>
+			</div>
+		</div>
+		
+		<div id="footer">
+			Theme by <a href="http://www.magicbug.co.uk" target="_blank">magicbug.co.uk</a>, powered by <a href="http://sandaysoft.com/products/cumulus" target="_blank">Cumulus</a>
+		</div>
+	</div>
+	<script language="JavaScript1.2" type="text/javascript">
+ var tempunits = "<#tempunit>"
+ var tempos = new Array("<#RCtemp>","<#RCtempTL>","<#RCtempTH>","<#temptrendtext>")
+ var tempis = new Array("<#RCintemp>","","","")
+ var tempex1 = new Array("","","","")
+ var tempex2 = new Array("","","","")
+ var tempdp = new Array("<#RCdew>","","","")
+ var temphi = new Array("<#RCheatindex>","","","")
+ var tempwc = new Array("<#RCwchill>","","","")
+ var humos = new Array("<#RChum>","","","")
+ var humis = new Array("<#RCinhum>","","","")
+ var humex1 = new Array("","","","")
+ var humex2 = new Array("","","","")
+ var cloudbase = "<#cloudbase>";
+ var raintoday = new Array("<#RCrfall>","<#rainunit>","<#RCrrate>","<#RCrrateTM>");
+ var winddata = new Array("<#RCwgust>","<#bearing>","<#RCwspeed>","<#avgbearing>","<#RCwgustTM> <#windunit>, <#bearingTM>&#176; at <#TwgustTM>");
+ var hwdir = new Array(<#wdirdata>);
+ var hwspd = new Array(<#wspddata>);
+ var wsu = "<#windunit>";
+ var bardata = new Array("<#RCpress>","<#pressunit>","<#presstrend>","<#RCpressTH>","<#RCpressTL>");
+ var TempColor = "";
+ var HumColor = "";
+ var RainColor = "";
+ var WindAvgColor = "";
+ var WindGustColor = "";
+ var WindHistColor = "";
+ var CloudTextColor = "";
+ var AnalogBaroTextColor = "";
+ var AnalogBaroNeedleColor = "";
+ var ExtraSensor1Name = "";
+ var ExtraSensor2Name = "";
+</script>
+<script language="JavaScript1.2" type="text/javascript" src="dbimages/dashboard.js"></script>
+<script language="JavaScript1.2" type="text/javascript" src="dbimages/boxover.js"></script>
+
+</body>
+</html>
