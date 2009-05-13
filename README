@@ -33,3 +33,11 @@ On Vista systems:
 	C:\Users\[username]\AppData\Local\VirtualStore\Program Files\Cumulus\web
 	
 	Start/Restart Cumulus
+	
+--------------
+  Modification
+--------------
+
+	Out of the box the theme comes with a logo for "Oxford Weather Station" you can change this by creating a new logo the whole theme is included in Adobe CS3 PSD format.
+	
+	Its also been made simple to create a background image by using the background.psd file.
